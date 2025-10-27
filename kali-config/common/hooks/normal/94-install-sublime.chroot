@@ -2,32 +2,21 @@
 
 set -e
 
-# Desactivar la validación de tamaño, temportalmente
+echo -e "Installing Sublime"
+
+cd /tmp
+
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+echo -e "**********************"
+echo -e "Installing Sublime"
+echo -e "**********************"
 
 
-# echo -e "Disabling size check validation"
 
-# echo 'Acquire::AllowInsecureRepositories "true";' > /etc/apt/apt.conf.d/99insecure
-# echo 'Acquire::AllowDowngradeToInsecureRepositories "true";' >> /etc/apt/apt.conf.d/99insecure
+apt-get update
 
-# echo -e "Installing Sublime"
-
-# cd /tmp
-
-# wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
-# echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-
-# echo -e "**********************"
-# echo -e "Installing Sublime"
-# echo -e "**********************"
-
-# echo "[*] Usando mirror principal de Kali (más estable)"
-# cat > /etc/apt/sources.list <<EOF
-# deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
-# EOF
-
-# apt-get update
-
-# echo -e "**********************"
-# apt -y install sublime-text || true
-# echo -e "**********************"
+echo -e "**********************"
+apt -y install sublime-text || true
+echo -e "**********************"
