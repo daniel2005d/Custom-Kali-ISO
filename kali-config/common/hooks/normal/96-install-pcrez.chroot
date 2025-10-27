@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+echo -e "***********************"
+echo -e "Installing PCredz"
+echo -e "***********************"
+
+
+#pip3 install Cython
+#pip3 install python-libpcap
+
+git clone https://github.com/lgandx/PCredz.git /opt/PCredz
+
+ln -s /opt/PCredz/Pcredz /usr/bin/Pcredz
+ln -s /opt/PCredz/Pcredz /usr/bin/pcredz

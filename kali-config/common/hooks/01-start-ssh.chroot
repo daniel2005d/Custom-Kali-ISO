@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -ex
+
+echo -e "************************"
+echo -e "Running from out of the normal folder"
+echo -e "************************"
+
+systemctl enable ssh

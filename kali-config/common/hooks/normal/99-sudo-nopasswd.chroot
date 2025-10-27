@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+echo "[*] Configurando sudo sin password"
+
+# Para todos los usuarios del grupo sudo (el que se crea por defecto en Debian/Kali)
+echo "%sudo ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/010_nopasswd
+chmod 440 /etc/sudoers.d/010_nopasswd

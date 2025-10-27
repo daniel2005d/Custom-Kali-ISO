@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+
+echo "[*] Configurando wallpaper por defecto"
+
+# Copiar el fondo al sistema
+mkdir -p /usr/share/backgrounds
+cp /usr/share/backgrounds/*.png /usr/share/backgrounds/
+
+# Crear carpeta de configuración en /etc/skel para usuarios nuevos
+mkdir -p /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml
+
+# Escribir configuración para usar el wallpaper
+cat > /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<channel name="xfce4-desktop" version="1.0">
+  <property name="backdrop" type="empty">
+    <property name="screen0" type="empty">
+      <property name="monitor0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/usr/share/backgrounds/default.png"/>
+          <property name="image-style" type="int" value="5"/> <!-- 5 = scaled -->
+        </property>
+      </property>
+    </property>
+  </property>
+</channel>
+EOF

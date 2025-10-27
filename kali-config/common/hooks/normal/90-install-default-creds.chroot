@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+echo -e "*******************"
+echo -e "Installing Default creds repository"
+git clone https://github.com/ihebski/DefaultCreds-cheat-sheet /opt/DefaultCreds
+cd /opt/DefaultCreds
+python -m venv .venv
+source /opt/DefaultCreds/.venv/bin/activate
+pip install -r requirements.txt
+cp creds /usr/bin/ && chmod +x /usr/bin/creds
+deactivate

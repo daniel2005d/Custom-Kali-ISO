@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+echo -e "Install Custom Scripts"
+git clone -q https://github.com/daniel2005d/scripts.git /opt/scripts
+
+cd /opt/scripts
+python -m venv .venv
+source /opt/scripts/.venv/bin/activate
+pip install -e .
+deactivate
+

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+echo "[*] Configurando idioma y teclado en XFCE"
+
+# Locale por defecto del sistema
+update-locale LANG=en_US.UTF-8
+
+# Configuración del teclado para X11
+cat > /etc/default/keyboard <<EOF
+XKBMODEL="pc105"
+XKBLAYOUT="latam"
+XKBVARIANT=""
+XKBOPTIONS="grp:alt_shift_toggle"
+BACKSPACE="guess"
+EOF
+
+# Zona horaria
+ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime

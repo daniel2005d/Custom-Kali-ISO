@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e 
+
+echo -e "**********************"
+echo -e "Download bash settings"
+echo -e "**********************"
+
+mkdir -p /etc/skel
+
+echo -e "Download bashaliases"
+wget https://raw.githubusercontent.com/daniel2005d/ConfigLocalMachine/refs/heads/main/files/.bash_aliases -O /etc/skel/.bash_aliases
+echo -e "Download bashrc"
+wget https://raw.githubusercontent.com/daniel2005d/ConfigLocalMachine/refs/heads/main/files/.bashrc -O /etc/skel/.bashrc
+wget https://raw.githubusercontent.com/daniel2005d/ConfigLocalMachine/refs/heads/main/files/.functionsrc -O /etc/skel/.functionsrc
+echo -e "Download tmux.conf"
+wget https://raw.githubusercontent.com/daniel2005d/ConfigLocalMachine/refs/heads/main/files/.tmux.conf -O /etc/skel/.tmux.conf
+echo -e "Download vimrc"
+wget https://raw.githubusercontent.com/daniel2005d/ConfigLocalMachine/refs/heads/main/files/.vimrc -O /etc/skel/.vimrc
+
+
+echo -e "Comping files to /root"
+
+cp /etc/skel/.functionsrc /root/
+cp /etc/skel/.bashrc /root/
+cp /etc/skel/.tmux.conf /root/
+cp /etc/skel/.bash_aliases /root/
+cp /etc/skel/.vimrc /root/

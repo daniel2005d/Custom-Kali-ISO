@@ -1,0 +1,72 @@
+## Live image with Xfce and default tool selection
+##
+## $ ./build.sh --variant xfce-light
+
+## Live images always want these
+kali-linux-core
+kali-desktop-live
+
+## Graphical desktop
+##   For the complete list see: https://www.kali.org/docs/general-use/metapackages/
+kali-desktop-xfce
+
+## Metapackages
+##   You can customize the set of Kali metapackages (groups of tools) to install
+##   For the complete list see: https://www.kali.org/tools/kali-meta/
+#kali-linux-default
+
+## Extra Kali packages/tools/applications
+##   For the complete list see: https://www.kali.org/tools/
+##                              https://pkg.kali.org/
+#<package>
+python3-pip
+python3-venv
+sqlmap
+macchanger
+vim
+lsd
+pipx
+git
+tmux
+curl
+openssh-server
+rofi
+grc
+htop
+xclip
+jq
+net-tools
+nmap
+netexec
+isc-dhcp-client
+isc-dhcp-client-ddns
+aircrack-ng
+metasploit-framework
+sqlitebrowser
+ffuf
+exiftool
+hashid
+hashcat
+html2text
+dislocker
+evil-winrm
+freerdp3-x11
+remmina
+smbclient
+hydra
+dnsx
+crunch
+golang-go
+python3-setuptools
+python3-wheel
+python3-build
+responder
+bettercap
+wireshark
+nginx
+python3-pip
+libpcap-dev
+file
+realmd
+krb5-user
+cherrytree

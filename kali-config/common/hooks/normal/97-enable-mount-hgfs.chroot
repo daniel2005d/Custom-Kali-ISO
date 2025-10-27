@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+echo "[*] Habilitando miservicio.service en systemd"
+systemctl enable mount-hgfs.service

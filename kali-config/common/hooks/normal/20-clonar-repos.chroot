@@ -1,0 +1,38 @@
+#!/bin/bash
+set -ex
+
+python3 -m pip install --upgrade pip setuptools wheel  --break-system-packages
+
+chown -R root:users /opt
+
+mkdir -p /opt/wordlist
+
+DEST="/opt/wordlist/SecLists"
+
+if [ ! -d "$DEST" ]; then
+    git clone -q --depth 1 https://github.com/danielmiessler/SecLists.git "$DEST"
+else
+    echo -e "Seclist Ya existe"
+fi
+
+git clone -q https://github.com/fortra/impacket.git /opt/impacket
+cd /opt/impacket
+python -m venv .venv
+source /opt/impacket/.venv/bin/activate
+python3 -m pip install --upgrade pip setuptools wheel
+pip install .
+deactivate
+
+git clone -q https://github.com/testssl/testssl.sh.git /opt/testssl
+ln -s /opt/testssl/testssl.sh /usr/bin/testssl
+
+wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 -O /usr/bin/kerbrute
+chmod +x /usr/bin/kerbrute
+
+wget https://github.com/m3n0sd0n4ld/uCVE/releases/download/3.1/uCVE -O /usr/bin/uCVE
+chmod +x /usr/bin/uCVE
+
+
+git clone -q https://github.com/insidetrust/statistically-likely-usernames.git /opt/wordlist/statistically-likely-usernames
+git clone -q https://github.com/Flangvik/SharpCollection.git /opt/SharpCollection
+git clone -q https://github.com/samratashok/nishang.git /opt/nishang

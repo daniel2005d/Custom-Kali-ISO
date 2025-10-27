@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -ex
+
+echo "Enable SSH Service"
+
+systemctl enable ssh

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+mkdir -p /opt/windows-binaries/mimikatz
+wget https://github.com/ParrotSec/mimikatz/raw/refs/heads/master/x64/mimikatz.exe -O /opt/windows-binaries/mimikatz/mimikatz.exe
+wget https://github.com/ParrotSec/mimikatz/raw/refs/heads/master/x64/mimidrv.sys -O /opt/windows-binaries/mimikatz/mimidrv.sys
+wget https://github.com/ParrotSec/mimikatz/raw/refs/heads/master/x64/mimilib.dll -O /opt/windows-binaries/mimikatz/mimilib.dll
+
+

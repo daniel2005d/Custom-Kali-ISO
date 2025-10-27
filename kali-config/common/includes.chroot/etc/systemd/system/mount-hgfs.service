@@ -1,0 +1,13 @@
+[Unit]
+Description=Montar carpetas compartidas de VMware (una sola vez)
+After=vmtoolsd.service
+Requires=vmtoolsd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
+RemainAfterExit=yes
+User=root
+
+[Install]
+WantedBy=multi-user.target

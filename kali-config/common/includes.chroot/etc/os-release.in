@@ -1,0 +1,6 @@
+NAME="Cyb3rb0b"
+PRETTY_NAME="Cyb3rb0b __VERSION__"
+ID=cyb3rb0b
+ID_LIKE=debian
+VERSION="__VERSION__ (Custom Build)"
+VERSION_CODENAME=basic
