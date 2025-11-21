@@ -47,6 +47,7 @@ ffuf
 exiftool
 hashid
 hashcat
+hashcat-utils
 html2text
 dislocker
 evil-winrm
@@ -70,3 +71,12 @@ file
 realmd
 krb5-user
 cherrytree
+libguestfs-tools
+xxd
+miniupnpc
+gupnp-tools
+mitm6
+enum4linux-ng
+hping3
+arp-scan
+wpscan
